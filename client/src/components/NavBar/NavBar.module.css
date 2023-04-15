@@ -1,0 +1,43 @@
+div {
+    padding: 0rem 0rem 1rem 0rem;
+  }
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #a39494;
+    }
+    
+    .li1 {
+      float: right;
+    }
+    
+    .li1 a {
+      display: block;
+      color: rgb(3, 3, 3);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: "Trebuchet MS", sans-serif;
+    }
+    
+    .li1 a:hover {
+      background-color: #c9b4b4;
+    }
+  
+    
+    .li2 {
+      float: left;
+    }
+    
+    .logo{
+      display: block;
+      margin: 0;
+      padding: 0;
+      float: left;
+      position: relative;
+      width:130px;
+      padding: 9px 14px;
+    } 

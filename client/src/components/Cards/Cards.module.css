@@ -1,0 +1,70 @@
+a{
+    text-decoration: none;
+    
+}
+
+.main_container{
+    font-size: 0.7rem;
+    text-decoration: none;
+    max-height: 50vh;
+    overflow: hidden;
+    color: #f2f2f2;
+    position: relative;
+}
+
+
+.main_container::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(223, 220, 220, 0.815);
+}
+
+.main_container:hover::before{
+    content: "See details";
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 1rem;
+    left: 0%;
+    background-color: rgba(153, 153, 153, 0.5);
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.image_container{
+    height: 29vh;
+    border-radius: 7px;
+}
+
+.image_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 1rem 0rem 0rem 0rem;
+}
+
+
+.main_container h2{
+    font-family: "Trebuchet MS", sans-serif;
+    color: rgba(230, 31, 31, 0.925);
+    font-size: 1rem;
+}
+
+.continent{
+text-decoration: none;
+font-family: "Trebuchet MS", sans-serif;
+color: black;
+font-size: 1rem;
+}
+
+.temperaments_container{ 
+    text-decoration: none;
+    font-family: "Trebuchet MS", sans-serif;
+    color: black;
+    font-size: 1rem;
+    margin: 0rem 0rem 0rem;
+}
+
+/* .temperaments_container h3{
+    
+} */
