@@ -1,0 +1,37 @@
+.form_search{
+    background-color: #f2f2f2;
+    border: none;
+    padding: 10px
+}
+
+.searchbar_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .searchbar_wrapper {
+    position: relative;
+  }
+  
+  .searchbar {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    width: 250px;
+    font-family: "Trebuchet MS", sans-serif;
+  }
+  
+  .searchbar_button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 0 20px 20px 0;
+    background-color: #ccc;
+    color: white;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+  }
