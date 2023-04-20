@@ -1,0 +1,23 @@
+
+
+  .pagination {
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.pagination a {
+    display: inline-block;
+    color: black;
+    float: left;
+    padding: 8px 8px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+.pagination a.active {
+    background-color: #0826ac;
+    color: rgb(28, 238, 245);
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ce7676;}

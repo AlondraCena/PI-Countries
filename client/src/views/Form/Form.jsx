@@ -39,7 +39,7 @@ const Form = () => {
             name:"",
             difficulty:"",
             duration:"",
-            season:[],
+            season:"",
             countries: []
         });
     
@@ -47,7 +47,7 @@ const Form = () => {
             name:"",
             difficulty:"",
             duration:"",
-            season:[],
+            season:"",
             countries: []
         });
        
@@ -59,33 +59,27 @@ const Form = () => {
             setForm({...form, [property]:value})
             
         }
-        // const handleCheckbox = (e) => {
-        //     const property = e.target.name;
-        //     const value = e.target.value;
-        //         if (property === 'season') {
-        //             const seasonValue = form.season.includes(value)
-        //             ? form.season.filter((s) => s !== value)
-        //             : [...form.season, value];
-        //             setForm({ ...form, [property]: seasonValue });
-        //         } else {
-        //             const updatedForm = { ...form, [property]: value };
-        //             setForm(updatedForm);
-        //             setErrors(validate(updatedForm));
-        //         }
-        // }
-        const [checkedItems, setCheckedItems] = useState({});
+        
+        // const [checkedItems, setCheckedItems] = useState({});
+        // const handleSeasonChange = (e) => {
+        //     const season = e.target.value;
+        //     const isChecked = e.target.checked;
+        //     setCheckedItems({ ...checkedItems, [season]: isChecked });
+        //     let updatedSeasons = [...form.season];
+        //     if (isChecked && !updatedSeasons.includes(season)) {
+        //       updatedSeasons.push(season);
+        //     } else {
+        //       updatedSeasons = updatedSeasons.filter((s) => s !== season);
+        //     }
+        //     setForm((prevState) => ({ ...prevState, season: updatedSeasons }));
+        //   };
+
         const handleSeasonChange = (e) => {
-            const season = e.target.value;
             const isChecked = e.target.checked;
-            setCheckedItems({ ...checkedItems, [season]: isChecked });
-            let updatedSeasons = [...form.season];
-            if (isChecked && !updatedSeasons.includes(season)) {
-              updatedSeasons.push(season);
-            } else {
-              updatedSeasons = updatedSeasons.filter((s) => s !== season);
+            if (isChecked){
+                setForm({...form, season: e.target.value})
             }
-            setForm((prevState) => ({ ...prevState, season: updatedSeasons }));
-          };
+        }
 
         const handleSelect = (e) => {
             const selected = e.target.value;
@@ -117,17 +111,20 @@ const Form = () => {
         
         const handleSubmit = async (e) => {
             e.preventDefault();
-            axios.post("http://localhost:3001/activities/", form)
+            axios
+            .post("http://localhost:3001/activities/", form)
             .then(res=>alert(res))
-            .catch(err=>alert(err))
+            .catch(err => {
+                console.log(err.response.data);
+                alert(err);})
         }
     
         const history = useHistory();
         const handlerRoute = () => history.push("/home");
        
-        const season = ['Winter', 'Spring', 'Autumn', 'Summer'];
+        const season = ['Summer', 'Autumn', 'Winter', 'Spring'];
         const difficulty = [1, 2, 3, 4, 5];
-
+        
     return(
         <div className={style.main_wrapper}>
             <button className= {style.Landingbutton} onClick={handlerRoute}><span>Home</span></button>
@@ -157,15 +154,17 @@ const Form = () => {
                     </div>
                         <div className={style.error_form}>{errors.duration && <p>{errors.duration}</p>}</div> {/*mesaje ed error de nombre*/}
 
-                <div className={style.input_container} name="season" value={form.season}>
+                <div className={style.input_container} name="season" value={form.season} >
                     <label>Choose season:</label>
-                    {season.map(option => (
-                        <div key={option}>
-                       <input type="checkbox" name={option} value= {option} id={option} checked={checkedItems[season]} onChange={handleSeasonChange}/>
-                       <label>{option}</label>
+                       <input type="checkbox" name="Summer" value="Summer" onChange={handleSeasonChange}/>
+                       <label>Summer</label>
+                       <input type="checkbox" name="Autumn" value="Autumn" onChange={handleSeasonChange}/>
+                       <label>Autumn</label>
+                       <input type="checkbox" name="Winter" value="Winter" onChange={handleSeasonChange}/>
+                       <label>Winter</label>
+                       <input type="checkbox" name="Spring" value="Spring" onChange={handleSeasonChange}/>
+                       <label>Spring</label>
                        </div>
-                    ))}
-                   </div>
                         <div className={style.error_form}>{errors.season && <p>{errors.season}</p>}</div> {/*mesaje ed error de nombre*/}
                 
                 <div className={""}>
@@ -191,11 +190,21 @@ const Form = () => {
             </form>
         </div>
     </div>
-)
-
+    )
 }
 
 export default Form;
 
 //input radio para seleccionar una sola opcion
 //input checkbox para selecionar varias
+
+// {/* <div className={style.input_container} name="season" value={form.season}>
+//                     <label>Choose season:</label>
+//                     {season.map(option => (
+//                         <div key={option}>
+//                        <input type="checkbox" name={option} value= {option} checked={checkedItems[season]} onChange={handleSeasonChange}/>
+//                        <label>{option}</label>
+//                        </div>
+//                     ))}
+//                    </div>
+//                         <div className={style.error_form}>{errors.season && <p>{errors.season}</p>}</div> mesaje ed error de nombre */}
