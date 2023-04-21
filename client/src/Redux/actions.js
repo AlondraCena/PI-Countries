@@ -4,6 +4,9 @@ import {
     SHOW_COUNTRY_DETAILS,
     GET_COUNTRY_BY_NAME,
     GET_ALL_ACTIVITIES,
+    ORDER_BY_NAME,
+    ORDER_BY_POPULATION,
+    FILTER_BY_CONTINENT,
     SUBMIT_FORM
 } from './actionTypes';
 
@@ -47,8 +50,20 @@ export const getAllActivities = () => {
     }   
 };
 
-export function postActivity(payload) {
-    return async (dispatch) => {
-        const res = await axios.post("http://localhost:3001/activities", payload);
-        dispatch({ type: SUBMIT_FORM, payload: res.data });
-    }}
+export function orderByName(payload){
+    return {type: ORDER_BY_NAME, payload}
+}
+
+export function orderByPopulation(payload){
+    return {type: ORDER_BY_POPULATION, payload}
+}
+
+export function filterCountriesByContinent(payload){
+    return {type: FILTER_BY_CONTINENT, payload}
+}
+
+// export function postActivity(payload) {
+//     return async (dispatch) => {
+//         const res = await axios.post("http://localhost:3001/activities", payload);
+//         dispatch({ type: SUBMIT_FORM, payload: res.data });
+//     }}
