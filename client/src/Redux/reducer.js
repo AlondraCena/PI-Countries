@@ -5,6 +5,7 @@ import { GET_ALL_COUNTRIES,
         ORDER_BY_NAME,
         ORDER_BY_POPULATION,
         FILTER_BY_CONTINENT,
+        FILTER_BY_ACTIVITY,
         SUBMIT_FORM
     } from "./actionTypes"
 
@@ -29,38 +30,34 @@ function rootReducer(state = initialState, action) {
         case GET_ALL_ACTIVITIES:
             return {...state, activities: action.payload};
 
-        case FILTER_BY_CONTINENT:
-            const allCountries = state.allCountries
-            const continentFiltered = action.payload === "All" ? allCountries : allCountries.filter(e => e.continent === action.payload)
-            return {...state, countries: continentFiltered};
-        
+            
         case ORDER_BY_NAME:
             let sortedArray = action.payload === "asc" ?
-                state.countries.sort(function(a, b){
-                    if (a.name > b.name) {
-                        return 1
-                    }
-                    if (b.name > a.name) {
-                        return -1
-                    }
-                    return 0
-                }) :
-                state.countries.sort(function(a, b){
-                    if (a.name > b.name) {
-                        return -1
-                    }
-                    if (b.name > a.name) {
-                        return 1
-                    }
-                    return 0
-                }) 
-                return {
-                    ...state,
-                    countries: sortedArray
+            state.countries.sort(function(a, b){
+                if (a.name > b.name) {
+                    return 1
                 }
-
-        case ORDER_BY_POPULATION:
-            let sortedArrayP = action.payload === "desc" ?
+                if (b.name > a.name) {
+                    return -1
+                }
+                return 0
+            }) :
+            state.countries.sort(function(a, b){
+                if (a.name > b.name) {
+                    return -1
+                }
+                if (b.name > a.name) {
+                    return 1
+                }
+                return 0
+            }) 
+            return {
+                ...state,
+                countries: sortedArray
+            }
+            
+            case ORDER_BY_POPULATION:
+                let sortedArrayP = action.payload === "desc" ?
                 state.countries.sort(function(a, b){
                     if (a.population > b.population) {
                         return 1
@@ -83,12 +80,23 @@ function rootReducer(state = initialState, action) {
                     ...state,
                     countries: sortedArrayP
                 }
-        
-        
-        // case SUBMIT_FORM:
-        //     return {
-        //         ...state,
-        //         name: action.payload.name,
+                
+            case FILTER_BY_CONTINENT:
+                const allCountries = state.allCountries
+                const continentFiltered = action.payload === "All" ? allCountries : allCountries.filter(e => e.continent === action.payload)
+                return {...state, countries: continentFiltered};
+                
+            case FILTER_BY_ACTIVITY:
+                const allCountriesAct = state.allCountries
+                const allCountriesActFiltered = allCountriesAct.filter(c => c.activities.some(a => a.name === action.payload))
+                const activitiesFiltered = action.payload === "All" ? allCountriesAct : allCountriesActFiltered
+                return {...state, countries: activitiesFiltered};    
+                
+                
+                // case SUBMIT_FORM:
+                //     return {
+                    //         ...state,
+                    //         name: action.payload.name,
         //         difficulty: action.payload.difficulty,
         //         duration: action.payload.duration,
         //         season: action.payload.season

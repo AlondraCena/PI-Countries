@@ -1,0 +1,30 @@
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    padding: 1.5rem 2rem;
+    background-color: #070925;
+    color: white;
+    font-size: 1rem;
+}
+.message{
+    padding: 0rem rem;
+}
+/* .social svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 1.5rem;
+} */
+
+/* @media (max-width: 40rem) {
+    .social svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 1.5rem;
+    }
+} */

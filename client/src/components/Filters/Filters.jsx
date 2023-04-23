@@ -1,12 +1,11 @@
 import style from "./Filters.module.css"
-import {useSelector} from "react-redux"
-import {useDispatch} from "react-redux";
-import { filterCountriesByContinent, orderByName, orderByPopulation } from "../../Redux/actions";
+import {useSelector, useDispatch} from "react-redux"
+import React, {useEffect} from "react";
+import { filterCountriesByContinent, orderByName, orderByPopulation, getAllActivities, filterCountriesByActivity } from "../../Redux/actions";
 
 
 const Filters = ({ setCurrentPage, setOrden }) => {
     const dispatch = useDispatch();
-    
 
     function handleSortByName(e){
         e.preventDefault();
@@ -21,8 +20,19 @@ const Filters = ({ setCurrentPage, setOrden }) => {
         setCurrentPage(1)
         setOrden(`Ordered ${e.target.value}`)
     };
+
     function handleFilterContinent(e){
         dispatch(filterCountriesByContinent(e.target.value))
+    };
+ 
+    const activities = useSelector((state) => state.activities);
+    useEffect(() => {
+        dispatch(getAllActivities());
+    }, [dispatch]);
+    console.log(activities);
+    
+    function handleFilterActivities(e){
+        dispatch(filterCountriesByActivity(e.target.value))
     };
 
 return(
@@ -48,9 +58,12 @@ return(
                     <option value="Antarctica">Antarctica</option>
                     <option value="Oceania">Oceania</option>
                 </select>
-                <select>
+                <select onChange={e => handleFilterActivities(e)}>
                     <option disabled selected>Activities</option>
-                       
+                    <option value="All">All</option>
+                    {activities.map(c => (                    
+                    <option value={c.name} key={c.name} className={style.option_temperament}>{c.name}</option>
+                        ))}
                 </select>
             </div>
 )

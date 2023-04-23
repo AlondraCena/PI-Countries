@@ -1,16 +1,26 @@
-const Landing = () => {
-    // const dispatch = useDispatch();
+import style from "./Landing.module.css"
+import { useHistory } from "react-router-dom";
+import React from "react";
+import africa from "./africa.mp4";
 
-    // useEffect(()=>{
-    //     dispatch(getAllDogs());
-    // },[dispatch])
+import landing2 from "./landing2.png"
+
+const Landing = () => {
+    const history = useHistory();
+    const handlerRoute = () => history.push("/home");
 
     return (
-        <> 
-        <div> 
-            <h1>vista Landing</h1>
+        <main className={style.landing}> 
+        <video className={style.video} src={africa} autoPlay loop muted/>
+        <section className={style.text_section}>
+        <div className={style.text_container}>
+            <h1 className={style.title1}>Globa<span className={style.title2}>List</span></h1>
+            <h2 className={style.text}>Take a pawse to discover how many we are and how different we can be. Just like you, hoomans!</h2>
         </div>
-        </>
+        <button className= {style.Landingbutton} onClick={handlerRoute}><span>Log in</span></button>
+        </section>
+       
+</main>
     )
 }
 

@@ -7,6 +7,7 @@ import {
     ORDER_BY_NAME,
     ORDER_BY_POPULATION,
     FILTER_BY_CONTINENT,
+    FILTER_BY_ACTIVITY,
     SUBMIT_FORM
 } from './actionTypes';
 
@@ -62,6 +63,9 @@ export function filterCountriesByContinent(payload){
     return {type: FILTER_BY_CONTINENT, payload}
 }
 
+export function filterCountriesByActivity(payload){
+    return {type: FILTER_BY_ACTIVITY, payload}
+}
 // export function postActivity(payload) {
 //     return async (dispatch) => {
 //         const res = await axios.post("http://localhost:3001/activities", payload);
