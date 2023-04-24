@@ -7,4 +7,5 @@
     grid-template-columns: repeat(auto-fill, 300px);
     gap: 15px;
     place-content: center;
+    background-color:rgba(0, 0, 0, 0.50);
 }

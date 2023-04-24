@@ -19,7 +19,7 @@ export default function SearchBar() {
     }
 
     return(
-        <form onSubmit={handleSubmit} className={style.form_search}>
+        <form onSubmit={handleSubmit} className={style.barContainer}>
         <div className={style.searchbar_container}>
         <div className={style.searchbar_wrapper}>
         <input className={style.searchbar} type="text" value={searchCountry} onChange={handleInput} placeholder="Search country/activity..."/>

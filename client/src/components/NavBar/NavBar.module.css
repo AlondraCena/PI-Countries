@@ -1,13 +1,11 @@
-div {
-    padding: 0rem 0rem 1rem 0rem;
-  }
+
   
   ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #a39494;
+      background-color: #ecc956;
     }
     
     .li1 {
@@ -21,17 +19,24 @@ div {
       padding: 14px 16px;
       text-decoration: none;
       font-family: "Trebuchet MS", sans-serif;
+      font-weight: bold;
     }
     
     .li1 a:hover {
-      background-color: #c9b4b4;
+      background-color: #b49e54;
     }
   
     
     .li2 {
       float: left;
+      margin-left: 10;
+      padding: 5px 30px;
     }
-    
+    .title1{
+      margin:0%;
+      font-family: "Trebuchet MS", sans-serif;
+
+    }
     .logo{
       display: block;
       margin: 0;

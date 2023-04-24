@@ -24,6 +24,7 @@ const CardsContainer = ({ currentPage, setCurrentPage, orden }) => {
                 countriesPerPage={countriesPerPage}
                 countries={countries.length}
                 pagination={pagination}
+                currentPage={currentPage}
             />
             </div>
          
@@ -38,8 +39,15 @@ const CardsContainer = ({ currentPage, setCurrentPage, orden }) => {
                 key={countries.id}
             />
         })}
-         
         </div>
+        <div className={style.center} >
+        <Pagination
+                countriesPerPage={countriesPerPage}
+                countries={countries.length}
+                pagination={pagination}
+                currentPage={currentPage}
+            />
+            </div>
         </div>
         
     )

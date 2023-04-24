@@ -12,8 +12,7 @@ const Card = (props) => {
             <div className={style.image_container}>
                 <img className={style.img} src={props.image} alt={`imagen de: ${props.name}`}/>
             </div>
-            <h2>{props.name}</h2>
-            <h2>{props.population}</h2>
+            <h2 className={style.name}>{props.name}</h2>
             <div className={style.continent}>Continent: {props.continent}</div>
             
         </div>

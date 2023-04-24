@@ -36,18 +36,18 @@ const Filters = ({ setCurrentPage, setOrden }) => {
     };
 
 return(
-<div>
-                <select onChange={e => handleSortByName(e)}>
+<div className={style.filterContainer}>
+                <select className={style.selects} onChange={e => handleSortByName(e)}>
                     <option disabled selected>Order</option>
                     <option value= "asc">A to Z</option>
                     <option value= "desc">Z to A</option>
                 </select>
-                <select onChange={e => handleSortByPopulation(e)}>
+                <select className={style.selects} onChange={e => handleSortByPopulation(e)}>
                     <option disabled selected>Population</option>
                     <option value= "asc">More to less</option>
                     <option value= "desc">Less to more</option>
                 </select>
-                <select onChange={e => handleFilterContinent(e)}>
+                <select className={style.selects} onChange={e => handleFilterContinent(e)}>
                     <option disabled selected>Continents</option>
                     <option value="All">All</option>
                     <option value="Africa">Africa</option>
@@ -58,11 +58,11 @@ return(
                     <option value="Antarctica">Antarctica</option>
                     <option value="Oceania">Oceania</option>
                 </select>
-                <select onChange={e => handleFilterActivities(e)}>
+                <select className={style.selects} onChange={e => handleFilterActivities(e)}>
                     <option disabled selected>Activities</option>
                     <option value="All">All</option>
                     {activities.map(c => (                    
-                    <option value={c.name} key={c.name} className={style.option_temperament}>{c.name}</option>
+                    <option value={c.name} key={c.name}>{c.name}</option>
                         ))}
                 </select>
             </div>

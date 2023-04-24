@@ -1,0 +1,22 @@
+.filterContainer{
+    background-color: rgba(0, 0, 0, 0.80);
+    padding: 0.5rem 0rem 0rem 0rem;
+}
+
+.selects{
+    cursor: pointer;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.80);
+    border: none;
+    border-radius: 15px;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    color: white;
+    box-shadow: 5px 5px 5px 0.5px rgba(0,0,0,0.4);
+    margin: 0rem 0.2rem 0.8rem 0.2rem;
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: center;
+}
+
+.options{
+    cursor: pointer;
+}

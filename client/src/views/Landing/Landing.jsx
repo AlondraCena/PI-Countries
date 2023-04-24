@@ -15,7 +15,7 @@ const Landing = () => {
         <section className={style.text_section}>
         <div className={style.text_container}>
             <h1 className={style.title1}>Globa<span className={style.title2}>List</span></h1>
-            <h2 className={style.text}>Take a pawse to discover how many we are and how different we can be. Just like you, hoomans!</h2>
+            <h2 className={style.text1}>See the countries of the world and their activities and plan your next adventure</h2>
         </div>
         <button className= {style.Landingbutton} onClick={handlerRoute}><span>Log in</span></button>
         </section>

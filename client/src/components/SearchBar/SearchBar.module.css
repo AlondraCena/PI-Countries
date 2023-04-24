@@ -1,5 +1,5 @@
-.form_search{
-    background-color: #f2f2f2;
+.barContainer{
+    background-color: rgba(0, 0, 0, 0.70);
     border: none;
     padding: 10px
 }
@@ -15,23 +15,25 @@
   }
   
   .searchbar {
-    padding: 10px;
-    border: 2px solid #ccc;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.80);
     border-radius: 20px;
     background-color: white;
     width: 250px;
     font-family: "Trebuchet MS", sans-serif;
+    font-size: 0.9rem;
   }
   
   .searchbar_button {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 10px;
-    border: 2px solid #ccc;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.80);
     border-radius: 0 20px 20px 0;
-    background-color: #ccc;
+    background-color: black;
     color: white;
     font-weight: bold;
     font-family: "Trebuchet MS", sans-serif;
+    font-size: 0.9rem;
   }
