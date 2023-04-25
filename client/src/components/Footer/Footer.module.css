@@ -6,14 +6,13 @@ footer {
     
     bottom: 0;
     left: 0;
-    z-index: 99;
-    padding: 1.5rem 2rem;
+    padding: 2rem 0rem 2rem 0rem;
     background-color: #070925;
     color: white;
     font-size: 1rem;
 }
 .message{
-    padding: 0rem rem;
+    padding-left: 2rem
 }
 /* .social svg {
     width: 2.2rem;
