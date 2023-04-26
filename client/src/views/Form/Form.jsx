@@ -1,7 +1,7 @@
 import style from "./Form.module.css"
 import React, {useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import { getAllCountries, postActivity } from "../../Redux/actions";
+import { getAllCountries } from "../../Redux/actions";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 

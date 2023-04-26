@@ -8,7 +8,7 @@ import {
     ORDER_BY_POPULATION,
     FILTER_BY_CONTINENT,
     FILTER_BY_ACTIVITY,
-    SUBMIT_FORM
+    SHOW_LOADER,
 } from './actionTypes';
 
 export const getAllCountries= () => {
@@ -66,8 +66,7 @@ export function filterCountriesByContinent(payload){
 export function filterCountriesByActivity(payload){
     return {type: FILTER_BY_ACTIVITY, payload}
 }
-// export function postActivity(payload) {
-//     return async (dispatch) => {
-//         const res = await axios.post("http://localhost:3001/activities", payload);
-//         dispatch({ type: SUBMIT_FORM, payload: res.data });
-//     }}
+
+export const setLoading = (loading) => ({
+    type: SHOW_LOADER, payload: loading});
+

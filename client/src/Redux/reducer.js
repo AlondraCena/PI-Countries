@@ -6,7 +6,7 @@ import { GET_ALL_COUNTRIES,
         ORDER_BY_POPULATION,
         FILTER_BY_CONTINENT,
         FILTER_BY_ACTIVITY,
-        SUBMIT_FORM
+        SHOW_LOADER,
     } from "./actionTypes"
 
 const initialState = {
@@ -14,6 +14,7 @@ const initialState = {
     details: [],
     activities: [],
     allCountries: [],
+    loading: false
 }
 
 function rootReducer(state = initialState, action) {
@@ -56,7 +57,7 @@ function rootReducer(state = initialState, action) {
                 countries: sortedArray
             }
             
-            case ORDER_BY_POPULATION:
+        case ORDER_BY_POPULATION:
                 let sortedArrayP = action.payload === "desc" ?
                 state.countries.sort(function(a, b){
                     if (a.population > b.population) {
@@ -81,26 +82,19 @@ function rootReducer(state = initialState, action) {
                     countries: sortedArrayP
                 }
                 
-            case FILTER_BY_CONTINENT:
+        case FILTER_BY_CONTINENT:
                 const allCountries = state.allCountries
                 const continentFiltered = action.payload === "All" ? allCountries : allCountries.filter(e => e.continent === action.payload)
                 return {...state, countries: continentFiltered};
                 
-            case FILTER_BY_ACTIVITY:
+        case FILTER_BY_ACTIVITY:
                 const allCountriesAct = state.allCountries
                 const allCountriesActFiltered = allCountriesAct.filter(c => c.activities.some(a => a.name === action.payload))
                 const activitiesFiltered = action.payload === "All" ? allCountriesAct : allCountriesActFiltered
                 return {...state, countries: activitiesFiltered};    
                 
-                
-                // case SUBMIT_FORM:
-                //     return {
-                    //         ...state,
-                    //         name: action.payload.name,
-        //         difficulty: action.payload.difficulty,
-        //         duration: action.payload.duration,
-        //         season: action.payload.season
-        //         };
+        case SHOW_LOADER:
+            return { ...state, loading: action.payload }; 
 
     default: return { ...state };
     }
