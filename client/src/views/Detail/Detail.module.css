@@ -5,13 +5,13 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: rgba(150, 143, 105, 0.486);
 }
 
 .main_container{
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ body {
   .sub_container{
       width: 100%;
       border-radius: 15px;
-      border: 4px solid #c47038b0;
+      border: 4px solid black;
       background-color: white;
   }
   
@@ -34,60 +34,7 @@ body {
       color: #575025;
       padding: 1rem 1rem 1rem 1rem;
   }
-  
-  button{ 
-      cursor: pointer; 
-      border: none;
-      position: relative;
-      border-radius: 5px;
-  }
-  
-  .button_home{
-      position: absolute;
-      top: 7%;
-  
-      width: 100px;
-      height: 40px;
-  
-      font-size: 1.1rem; 
-      background: none;
-      padding: 0.65rem 0.6rem;
-      transition: color 0.5s linear;
-      z-index: 100;
-      border: 0.1rem solid white;
-      outline: 0.1rem solid #25b687;
-      text-shadow: 0 0 3px #25b687;
-      color: #25b687;
-  }
-  
-  .button_home:hover{
-      color: white;
-  }
-  
-  .button_home::before,
-  .button_home::after{
-      content: "";
-      display: block;
-      top: 0;
-      left: 0;
-      position: absolute;
-      background-color: #25b687;
-      height: 100%;
-      width: 100%;
-      transition: transform 0.5s linear;
-      z-index: -10;
-  }
-  
-  .button_home::before{ transform: rotateY(90deg); }
-  
-  .button_home::after{ transform: rotateX(90deg); }
-  
-  .button_home:hover::before,
-  .button_home:hover::after{ 
-      transform: rotate(0);
-  }
-  
-  
+
   .sub_container img{
       width: 450px;
       max-width: 600px;
@@ -104,7 +51,7 @@ body {
   
   .right_container h1{
       margin: 0;
-      color: rgba(230, 31, 31, 0.925)
+      color: #f3c737
   }
   
   .right_container h3{
@@ -115,3 +62,15 @@ body {
     margin: 0.6rem;
     background-color: white;
   }
+
+  .container_button_home{
+    padding-top: 2rem;
+}
+.homeButton{
+    font-size: 1rem;
+    background-color: #f3c737;
+    cursor: pointer;
+    font-family: "Trebuchet MS", sans-serif;
+    color: white;
+    border-radius: 15px;
+}

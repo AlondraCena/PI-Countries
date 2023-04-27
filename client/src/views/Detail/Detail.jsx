@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams,  useHistory } from "react-router-dom";
 import { showCountryDetails } from "../../Redux/actions";
 import style from "./Detail.module.css";
 import NavBar from "../../components/NavBar/NavBar";
@@ -15,26 +15,6 @@ const Detail = () => {
     useEffect(() => {
         dispatch(showCountryDetails(id));
     }, [dispatch, id]);
-
-   
-    
-    // if (details[0]) { //una vez ya se hayan traido los datos renderizalos
-    //     nameC = details[0].name;
-    //     imageC = details[0].image;
-    //     continentC = details[0].continent;
-    //     subregionC = details[0].subregion;
-    //     capitalC = details[0].capital;
-    //     areaC = details[0].area;
-    //     populationC = details[0].population;
-
-    //     if (details[0].activities[0]) {
-    //         activitiesC = [...details[0].activities]
-    //     }
-        
-    //     if (details[0].activities[0].name) {
-    //         activitiesC = details[0].activities.map(act => act.name)
-    //     }
-    // };
 
     let nameC, imageC, continentC, subregionC, capitalC, areaC, populationC, activitiesC = [];
   
@@ -52,8 +32,9 @@ const Detail = () => {
     }
   }
 
-    console.log(nameC)
-    
+  const history = useHistory();
+  const handlerRoute = () => history.push("/home");
+
     return(
         <>
         <NavBar />
@@ -81,6 +62,9 @@ const Detail = () => {
                             </div>
                         </div>   
                 </div>
+            </div>
+            <div className={style.container_button_home}>
+            <button className= {style.homeButton} onClick={handlerRoute}><span>Home</span></button>
             </div>
         </div>
         </> 

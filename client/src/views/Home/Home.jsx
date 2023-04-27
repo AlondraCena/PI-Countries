@@ -7,6 +7,7 @@ import { useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
 import { getAllCountries, } from "../../Redux/actions";
 import { setLoading } from "../../Redux/actions";
+import style from "./Home.module.css"
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Home = () => {
     const [orden, setOrden] = useState('');
 
     return (
-        <> 
+        <div className={style.mainContainer}> 
         <NavBar />
         <div> 
             <Filters setCurrentPage={setCurrentPage} setOrden={setOrden}/>
@@ -28,7 +29,7 @@ const Home = () => {
         </div>
         <CardsContainer currentPage={currentPage} setCurrentPage={setCurrentPage} orden={orden}/>
         <Footer/>
-        </>
+        </div>
     )
 }
 

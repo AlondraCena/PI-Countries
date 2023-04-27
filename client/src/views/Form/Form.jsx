@@ -171,7 +171,9 @@ const Form = () => {
                     <button className={style.button_add} disabled={button} type="submit" >SUBMIT</button>
                 </div>
             </form>
+            <div className={style.container_button_home}>
             <button className= {style.homeButton} onClick={handlerRoute}><span>Home</span></button>
+            </div>
         </div>
         
     </div>
