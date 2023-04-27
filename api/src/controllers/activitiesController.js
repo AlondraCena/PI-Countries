@@ -2,29 +2,26 @@ const { Country, Activity } = require("../db");
 const axios = require("axios");
 
 const getAllActivities= async () =>{
-//     const url = (await axios.get("https://restcountries.com/v3/all")).data;
 
-//     const tempApiRaw = await url.map((item) => item.temperament?.split(', ')).flat()
-
-//     const cleanArray = new Set(tempApiRaw)
-   
-//     cleanArray.forEach(async (item) => {
-//         if (item) {
-//           await Temperaments.findOrCreate({
-//             where: { name: item }
-//           })
-//         }
-//       })
-
-   let allActivities = await Activity.findAll({ include: Country });
+   let allActivities = await Activity.findAll({ 
+    include:[{
+        model: Country,
+        attributes: ["name"],
+        through:{
+            attributes:[] //no quiero datos de tabla intermedia
+        }
+}]});
    //const minus = allActivities.map(e => e.name.toLowerCase())
    return allActivities;
 };
 
-const createActivity = async (name, difficulty, duration, season) =>{
-    const newAct = await Activity.create({ name, difficulty, duration, season,
-        include: { model: Country}});
-       return newAct
+const createActivity = async (name, difficulty, duration, season, countries) =>{
+    const newAct = await Activity.create({ name, difficulty, duration, season,});
+       
+    const dbCountries = await Country.findAll({ where: { name: countries } });
+        await newAct.setCountries(dbCountries);
+    
+    return newAct
 }; 
 
 

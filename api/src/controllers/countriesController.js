@@ -4,13 +4,13 @@ const {Op} = require('sequelize');
 const getAll = async () =>{
     
     const dbCountries = await Country.findAll({
-        include:{
+        include:[{
             model: Activity,
             attributes: ["name"],
             through:{
                 attributes:[] //no quiero datos de tabla intermedia
             }
-        }
+        }]
     });
     return dbCountries;
 };
