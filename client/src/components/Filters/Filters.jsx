@@ -3,7 +3,6 @@ import {useSelector, useDispatch} from "react-redux"
 import React, {useEffect} from "react";
 import { filterCountriesByContinent, orderByName, orderByPopulation, getAllActivities, filterCountriesByActivity } from "../../Redux/actions";
 
-
 const Filters = ({ setCurrentPage, setOrden }) => {
     const dispatch = useDispatch();
 

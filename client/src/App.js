@@ -1,6 +1,7 @@
 import './App.css';
 import { Route, useLocation } from "react-router-dom"
 import { Home, Landing, Form, Detail} from "./views"
+// import NotFound from "./components/NotFound/NotFound"
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -15,3 +16,4 @@ function App() {
 }
 
 export default App;
+{/* <Route exact path ="*" component = {NotFound} /> */}

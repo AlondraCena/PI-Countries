@@ -1,0 +1,147 @@
+.main_wrapper{
+    justify-content: center;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.container{
+    width: 50%;
+    font-family: "Trebuchet MS", sans-serif;
+}
+.main_title{
+    font-size: 1.5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #c47038b0;
+    background-color: white;
+    padding: 1rem 0;
+    border-radius: 15px;
+}
+
+.form input{
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    height: 1.2rem;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.error_form{
+    height: 30px;
+    width: 100%;
+    font-size: 0.9rem;
+    color: rgba(255, 26, 26, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0;
+
+}
+
+.difficulty_container{
+    
+}
+
+.select_activities{
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #ccc;
+    border: none;
+    border-radius: 15px;
+    padding: 0.4rem;
+    color: white;
+    box-shadow: 5px 5px 5px 0.5px rgba(0,0,0,0.4);
+    margin-bottom: 0.9rem;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.option_activity{
+    cursor: pointer;
+}
+
+.container_activities{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0 7px;
+    align-items: center;
+    justify-items: center;
+    
+}
+.title_activities{
+    
+}
+
+.container_button_add{
+     background-color: red;
+     border-radius: 15px;
+}
+
+.button_add{
+    font-size: 1rem;
+    background-color: #cf2323;
+    cursor: pointer;
+    font-family: "Trebuchet MS", sans-serif;
+    color: white;
+    border-radius: 15px;
+    
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+.element_activity{
+    max-height: 70px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin: 5px 0;
+    color: #575025;
+    width: 100%;
+    font-weight: bolder;
+    position: relative;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.element_activity:hover{
+    cursor: pointer;
+}
+
+.element_activity::before{
+    content: "";
+    position: absolute;
+}
+
+.element_activity:hover::before{
+    font-family: "Trebuchet MS", sans-serif;
+    content: "X";
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 2rem;
+    left: 0%;
+    background-color: rgba(153, 153, 153, 0.5);
+}
+
+.homeButton{
+    font-size: 1rem;
+    background-color: #cf2323;
+    cursor: pointer;
+    font-family: "Trebuchet MS", sans-serif;
+    color: white;
+    border-radius: 15px;
+}

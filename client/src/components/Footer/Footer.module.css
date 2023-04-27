@@ -1,9 +1,14 @@
+.container {
+    position: relative;
+    margin-bottom: 5rem;
+}
+
 footer {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    position: relative;
     bottom: 0;
     left: 0;
     padding: 2rem 0rem 2rem 0rem;
@@ -14,16 +19,3 @@ footer {
 .message{
     padding-left: 2rem
 }
-/* .social svg {
-    width: 2.2rem;
-    height: 2.2rem;
-    margin-left: 1.5rem;
-} */
-
-/* @media (max-width: 40rem) {
-    .social svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-left: 1.5rem;
-    }
-} */

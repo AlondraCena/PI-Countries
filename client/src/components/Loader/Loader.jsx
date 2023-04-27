@@ -1,6 +1,5 @@
 import loader from "./loader.gif"; 
 import style from "./Loader.module.css"
-import {useSelector } from "react-redux";
 import React from 'react';
 
 
