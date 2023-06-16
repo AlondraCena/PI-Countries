@@ -26,9 +26,6 @@ const { cleanArrayMain } = require("./src/utils/utils");
 conn.sync({ force: false }).then(() => {
  server.listen(3001, async () => {
   const allCountries = await Country.findAll();
-  // if(allCountries){
-  //   console.log('ya estaba creado')
-  //   return allCountries}
   
     if(!allCountries.length){
       const apiCountriesRaw = (await axios.get("https://restcountries.com/v3/all")).data;
