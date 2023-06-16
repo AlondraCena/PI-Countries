@@ -5,8 +5,7 @@ import Filters from "../../components/Filters/Filters";
 import Footer from "../../components/Footer/Footer";
 import { useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
-import { getAllCountries, } from "../../Redux/actions";
-import { setLoading } from "../../Redux/actions";
+import { getAllCountries, setLoading} from "../../Redux/actions";
 import style from "./Home.module.css"
 
 const Home = () => {

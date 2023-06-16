@@ -117,24 +117,24 @@ const Form = () => {
                 <div className={style.input_container}>
                     <input className={style.input_name} type="text" value={form.name} name="name" placeholder="Name..." onChange={handleChange}/>
                 </div>
-                        <div className={style.error_form}>{errors.name && <p>{errors.name}</p>}</div> {/*mesaje ed error de nombre*/}
+                        <div className={style.error_form}>{errors.name && <p>{errors.name}</p>}</div> 
 
                 <div className={style.difficulty_container} value={form.difficulty} name="difficulty" onChange={handleChange}>
                     <label >Choose difficulty:</label>
                     {difficulty.map(option => (
                         <div key={option}>
-                       <input type="radio" name="difficulty" value={option} id={option}     />
+                       <input type="radio" name="difficulty" value={option} id={option} />
                        <label>{option}</label>
                        </div>
                     ))}
                    </div>
-                        <div className={style.error_form}>{errors.difficulty && <p>{errors.difficulty}</p>}</div> {/*mesaje ed error de nombre*/}
+                        <div className={style.error_form}>{errors.difficulty && <p>{errors.difficulty}</p>}</div> 
                 
                 <div name="duration" value={form.duration} onChange={handleChange}>
                     <label>How long does the activity last?</label>
                     <input type="text" name="duration" value={form.duration} placeholder="HH.mm"/>
                     </div>
-                        <div className={style.error_form}>{errors.duration && <p>{errors.duration}</p>}</div> {/*mesaje ed error de nombre*/}
+                        <div className={style.error_form}>{errors.duration && <p>{errors.duration}</p>}</div> 
 
                 <div className={style.input_container} name="season" value={form.season} >
                     <label>Choose season:</label>
@@ -147,13 +147,13 @@ const Form = () => {
                        <input type="radio" name="season" value="Spring" onChange={handleChange}/>
                        <label>Spring</label>
                        </div>
-                        <div className={style.error_form}>{errors.season && <p>{errors.season}</p>}</div> {/*mesaje ed error de nombre*/}
+                        <div className={style.error_form}>{errors.season && <p>{errors.season}</p>}</div> 
                 
                 <div className={""}>
                         <select className={style.select_activities} onChange={handleSelect}>
                             <option disabled selected>Countries</option>
                             {countries.map(c => (                    
-                                <option value={c.name} key={c.name+Math.random()} className={style.option_activity}>{c.name}</option> //key de elementos de temperamentos, eliminar el repetido reserved
+                                <option value={c.name} key={c.name+Math.random()} className={style.option_activity}>{c.name}</option> 
                                 ))}
                         </select>
                     </div>

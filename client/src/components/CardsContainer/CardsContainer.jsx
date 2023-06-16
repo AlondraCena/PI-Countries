@@ -16,6 +16,7 @@ const CardsContainer = ({ currentPage, setCurrentPage, orden }) => {
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
+    
     const loading = useSelector((state) => state.loading);
     if (loading) {
         return <Loader />;

@@ -51,10 +51,6 @@ form{
 
 }
 
-.difficulty_container{
-    
-}
-
 .select_activities{
     cursor: pointer;
     font-size: 1rem;
@@ -78,9 +74,6 @@ form{
     grid-gap: 0 7px;
     align-items: center;
     justify-items: center;
-    
-}
-.title_activities{
     
 }
 

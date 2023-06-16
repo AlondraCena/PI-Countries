@@ -1,8 +1,7 @@
 import './App.css';
-import { Route, useLocation } from "react-router-dom"
+import { Route } from "react-router-dom"
 import { Home, Landing, Form, Detail} from "./views"
-// import NotFound from "./components/NotFound/NotFound"
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function App() {
   return (

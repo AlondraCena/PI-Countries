@@ -35,19 +35,10 @@ export default function Pagination ({countriesPerPage, countries, pagination, cu
         const right = currentPage + Math.ceil(delta / 2);
         const pages = [];
 
-            // if (!left) {
-            //     pages.push("...");
-            // }
-
             for (let i = 1; i <= pageNumbers.length; i++) {
                 if (i >= left && i <= right) 
                 pages.push(i);
                 }
-                
-
-            // if (right > pageNumbers.length) {
-            //     pages.push("...");
-            // }
             
             return pages
         };

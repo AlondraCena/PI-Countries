@@ -10,7 +10,6 @@ const Detail = () => {
     const dispatch = useDispatch();
     
     const details = useSelector((state) => state.details)
-    console.log(details)
    
     useEffect(() => {
         dispatch(showCountryDetails(id));
@@ -18,7 +17,7 @@ const Detail = () => {
 
     let nameC, imageC, continentC, subregionC, capitalC, areaC, populationC, activitiesC = [];
   
-  if (details) {
+    if (details) {
     nameC = details.name;
     imageC = details.image;
     continentC = details.continent;
